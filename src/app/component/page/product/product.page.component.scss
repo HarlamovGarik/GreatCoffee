@@ -1,0 +1,31 @@
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-image {
+  margin-right: 20px;
+}
+
+.product-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.quantity {
+  margin-top: 10px;
+}
+
+.description {
+  margin-top: 20px;
+}

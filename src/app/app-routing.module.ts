@@ -10,7 +10,7 @@ import {ProductPageComponent} from "./component/page/product/product.page.compon
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: ProductPageComponent,
     children: [
       {
         path: '',
