@@ -51,31 +51,23 @@
 
     </header>
     <div class="main-catalog">
-      <aside class="catalog-aside">
+      <aside class="catalog-aside" *ngIf="categories">
           <ul class="product-categories">
-            <li tabindex="2" class="item-parent" [routerLink]="">
-              <a><p>Кофе</p></a>
+            <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id">
+              <a><p>{{category.name}}</p></a>
             </li>
-            <li tabindex="2" class="item-parent">
-              <a><p>Чай</p></a>
-            </li>
-            <li tabindex="2" class="item-parent">
-              <a><p>Сіроп</p></a>
-            </li>
-            <li tabindex="2" class="item-parent">
+
+            <li tabindex="2" class="item-parent" routerLink="all">
               <a><p>Всі категорії</p></a>
             </li>
           </ul>
       </aside>
       <section class="products-index">
         <ul class="products-list">
-          <gc-product-tile>
+          <gc-product-tile *ngFor="let item of filteredData" (item)="item">
 
           </gc-product-tile>
         </ul>
-        <button class="button-more-product" type="button" name="more">
-          <span>Load more</span>
-        </button>
       </section>
     </div>
   </div>

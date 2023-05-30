@@ -1,0 +1,20 @@
+.cdk-global-overlay-wrapper{
+ justify-content: flex-start !important;
+  min-width: 400px;
+  max-width: 1200px;
+}
+.popup-container{
+  mat-dialog-container{
+    border-radius: 0;
+    border-right: 4px solid orange;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.35);
+    padding: 0;
+  }
+}
+.cdk-overlay-container{
+  animation: init 200ms ease-in-out;
+}
+@keyframes init {
+  from {top: -100vh}
+  to {top: 0}
+}

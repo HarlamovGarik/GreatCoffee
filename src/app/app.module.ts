@@ -20,6 +20,7 @@ import { HeaderComponent } from './component/basic/header/header.component';
 import { FooterComponent } from './component/basic/footer/footer.component';
 import { ProductTileComponent } from './component/basic/product-tile/product-tile.component';
 import { BasketPopupMenuComponent } from './component/basic/basket-popup-menu/basket-popup-menu.component';
+import { SearchPopupMenuComponent } from './component/basic/search-popup-menu/search-popup-menu.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BasketPopupMenuComponent } from './component/basic/basket-popup-menu/ba
     FooterComponent,
     ProductTileComponent,
     BasketPopupMenuComponent,
+    SearchPopupMenuComponent,
   ],
   imports: [
     BrowserModule,

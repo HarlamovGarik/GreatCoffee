@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
+import {PopupService} from "../../../service/popup/popup.service";
 
 @Component({
   selector: 'gc-header',
@@ -7,7 +8,7 @@ import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewC
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() {
+  constructor(private popupService: PopupService) {
   }
 
   @ViewChild('headerBox') headerBox!: ElementRef;
@@ -27,5 +28,8 @@ export class HeaderComponent implements OnInit {
       { threshold: [1] }
     );
     observer.observe(this.headerBox.nativeElement);
+  }
+  openSearchPanel(){
+    this.popupService.openSearch()
   }
 }

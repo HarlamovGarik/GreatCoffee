@@ -12,7 +12,7 @@ import {CategoriesDTO} from "../../../DTO/categories.dto";
 })
 export class CatalogPageComponent implements OnInit {
 
-  public products: ProductDTO[] = [];
+  public products!: ProductDTO[];
   public filteredData: ProductDTO[] = [];
   public categories: CategoriesDTO[] = [];
   private sortedColumn: string | undefined = "";
@@ -39,21 +39,25 @@ export class CatalogPageComponent implements OnInit {
       const parentId = params['id-parent-catalog'];
       const id = params['id-catalog'];
 
-      this.apiService.getAllParentCategories().subscribe(res =>{
-        this.categories = res;
-        console.log('parents id')
-      })
-      this.apiService.getALLProductList().subscribe(res => {
-        this.products = res;
-        console.log('all products id')
-        this.filteredData = this.products;
-      });
+      if(!id && !parentId){
+        console.log('all')
+        this.apiService.getAllParentCategories().subscribe(res =>{
+          this.categories = res;
+          console.log('parents id')
+        })
+        this.apiService.getALLProductList().subscribe(res => {
+          this.products = res;
+          console.log('all products id')
+          this.filteredData = this.products;
+        });
+      }
 
       if (parentId == 'all') {
         this.router.navigate(['']);
         return;
       }
-      console.log('all')
+
+
       if (parentId && !id) {
         console.log(parentId)
         this.apiService.getALLProductListByParentCategories(parentId).subscribe(res => {

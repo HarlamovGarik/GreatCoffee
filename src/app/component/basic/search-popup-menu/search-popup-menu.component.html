@@ -1,0 +1,15 @@
+<div class="main-box">
+  <header>
+    <div class="search-panel">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input #searchPanel type="text" (input)="searchProductList(searchPanel.value)" (change)="searchProduct(searchPanel.value)">
+      </div>
+
+      <button class="find-btn" (click)="searchProduct(searchPanel.value)">Знайти</button>
+    </div>
+  </header>
+  <main>
+
+  </main>
+</div>
