@@ -3,7 +3,7 @@
     <h2 class="title-category main-title">Категорії</h2>
       <ul class="category-list">
 
-        <li class="category-item" *ngFor="let category of categories">
+        <li class="category-item" *ngFor="let category of parentCategories">
           <a [routerLink]="category.id.toString()" class="category-container">
             <div class="category-content">
               <div class="category-image">
