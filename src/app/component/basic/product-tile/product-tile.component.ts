@@ -20,7 +20,7 @@ export class ProductTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() item: ProductDTO | any = {
+  @Input() item: ProductDTO = {
     amount: 2,
     id: 0,
     image: "https://imperial-coffee.shop/wp-content/uploads/2023/05/4546223695_jelini-marmelad-serdtse.jpg",
