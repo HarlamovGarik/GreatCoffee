@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'gc-home',
@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   constructor() { }
-
+  @ViewChild('headerBox') headerBox!: ElementRef;
   ngOnInit(): void {
   }
-
+  public pinned: boolean = false;
+  pinnedEvent(value: boolean){
+    this.pinned = value;
+  }
 }

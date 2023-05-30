@@ -1,1 +1,91 @@
-<p>catalog.page works!</p>
+<section class="categories-index body-section" id="categories">
+  <main class="categories-wrapper main-body">
+    <h2 class="title-category main-title">Категорії</h2>
+      <ul class="category-list">
+
+        <li class="category-item">
+          <a [routerLink]="" class="category-container">
+            <div class="category-content">
+              <div class="category-image">
+                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-1.png" alt="Coffee">
+              </div>
+              <div class="wrapper-block">
+                <h4 class="category-title">Кофе</h4>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="category-item">
+          <a [routerLink]="" class="category-container">
+            <div class="category-content">
+              <div class="category-image">
+                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-5.png" alt="tea">
+              </div>
+              <div class="wrapper-block">
+                <h4 class="category-title">Чай</h4>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category-item">
+          <a [routerLink]="" class="category-container">
+            <div class="category-content">
+              <div class="category-image">
+                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-4.png" alt="syrups">
+              </div>
+              <div class="wrapper-block">
+                <h4 class="category-title">Сіроп</h4>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+  </main>
+</section>
+
+<section class="catalog-index body-section" id="catalog">
+  <div class="catalog-wrapper main-body">
+    <header class="catalog-header">
+      <h2 class="title-catalog main-title">Каталог</h2>
+
+    </header>
+    <div class="main-catalog">
+      <aside class="catalog-aside">
+          <ul class="product-categories">
+            <li tabindex="2" class="item-parent" [routerLink]="">
+              <a><p>Кофе</p></a>
+            </li>
+            <li tabindex="2" class="item-parent">
+              <a><p>Чай</p></a>
+            </li>
+            <li tabindex="2" class="item-parent">
+              <a><p>Сіроп</p></a>
+            </li>
+            <li tabindex="2" class="item-parent">
+              <a><p>Всі категорії</p></a>
+            </li>
+          </ul>
+      </aside>
+      <section class="products-index">
+        <ul class="products-list">
+          <li class="tile">
+
+          </li>
+          <li class="tile">
+
+          </li>
+          <li class="tile">
+
+          </li>
+          <li class="tile">
+
+          </li>
+        </ul>
+        <button class="button-more-product" type="button" name="more">
+          <span>Load more</span>
+        </button>
+      </section>
+    </div>
+  </div>
+</section>

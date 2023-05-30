@@ -1,0 +1,22 @@
+ul {
+  list-style: none;
+}
+.body-section {
+  width: calc(100% - min(max(10px, 4vw), 80px) * 2);
+  padding: 0 min(max(10px, 4vw), 80px);
+  background-color: rgb(56, 56, 56);
+
+  .main-body {
+    width: 100%;
+    max-width: 1680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    .main-title {
+      text-align: left;
+      margin-bottom: 20px;
+      color: orange;
+    }
+  }
+}
