@@ -20,13 +20,7 @@ export class ProductTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() item: ProductDTO = {
-    amount: 2,
-    id: 0,
-    image: "https://imperial-coffee.shop/wp-content/uploads/2023/05/4546223695_jelini-marmelad-serdtse.jpg",
-    price: 120,
-    name: "Jelini, Мармелад «Сердце», жевательный без сахара, в шоубоке 30г 36шт в асортименте"
-  }
+  @Input() item!: ProductDTO;
 
   inBasket(){return this.basketStorageService.hasProductById(this.item.id);}
   putInBasket() {

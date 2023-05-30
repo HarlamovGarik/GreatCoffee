@@ -14,13 +14,13 @@ import { CatalogPageComponent } from './component/page/catalog.page/catalog.page
 import { NotFoundComponent } from './component/page/not-found/not-found.component';
 import { AboutUsPageComponent } from './component/page/about-us.page/about-us.page.component';
 import { IntroductionPageComponent} from "./component/page/introduction.page/introduction.page.component";
-import { ProductPageComponent } from './component/page/product.page/product.page.component';
+import { ProductPageComponent } from './component/page/product/product.page.component';
 //COMPONENTS
 import { HeaderComponent } from './component/basic/header/header.component';
 import { FooterComponent } from './component/basic/footer/footer.component';
 import { ProductTileComponent } from './component/basic/product-tile/product-tile.component';
 import { BasketPopupMenuComponent } from './component/basic/basket-popup-menu/basket-popup-menu.component';
-import { SearchPopupMenuComponent } from './component/basic/search-popup-menu/search-popup-menu.component';
+import {SearchPopupMenuComponent} from "./component/basic/search-popup-menu/search-popup-menu.component";
 
 @NgModule({
   declarations: [

@@ -3,6 +3,7 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {ApiService} from "../../../service/api/api.service";
 import {ProductDTO} from "../../../DTO/product.dto";
 import {CategoriesDTO} from "../../../DTO/categories.dto";
+import {ProductSubscribe} from "../../../service/ProductSubscribe";
 
 
 @Component({
@@ -19,6 +20,7 @@ export class CatalogPageComponent implements OnInit {
   private sortedColumn: string | undefined = "";
 
   constructor(
+    protected ProductSubscribe:ProductSubscribe,
     protected apiService: ApiService,
     protected activatedRoute: ActivatedRoute,
     protected router: Router
@@ -52,6 +54,7 @@ export class CatalogPageComponent implements OnInit {
           console.log('parents id')
         })
         this.apiService.getALLProductList().subscribe(res => {
+
           this.products = res;
           console.log('all products id')
           this.filteredData = res;

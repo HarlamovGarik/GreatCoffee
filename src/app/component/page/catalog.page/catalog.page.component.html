@@ -64,9 +64,7 @@
       </aside>
       <section class="products-index">
         <ul class="products-list">
-          <gc-product-tile *ngFor="let item of filteredData" (item)="item">
-
-          </gc-product-tile>
+          <gc-product-tile *ngFor="let item of products" [item]="item"></gc-product-tile>
         </ul>
       </section>
     </div>
