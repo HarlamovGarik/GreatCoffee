@@ -13,8 +13,8 @@ import {CategoriesDTO} from "../../../DTO/categories.dto";
 export class CatalogPageComponent implements OnInit {
 
   public products!: ProductDTO[];
-  public filteredData: ProductDTO[] = [];
-  public categories: CategoriesDTO[] = [];
+  public filteredData!: ProductDTO[];
+  public categories!: CategoriesDTO[];
   private sortedColumn: string | undefined = "";
 
   constructor(

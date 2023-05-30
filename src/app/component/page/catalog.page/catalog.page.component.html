@@ -53,7 +53,7 @@
     <div class="main-catalog">
       <aside class="catalog-aside" *ngIf="categories">
           <ul class="product-categories">
-            <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id">
+            <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id.toString()">
               <a><p>{{category.name}}</p></a>
             </li>
 
