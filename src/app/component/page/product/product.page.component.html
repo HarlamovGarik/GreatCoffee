@@ -4,8 +4,8 @@
   </div>
   <div class="product-info">
     <h2>{{ product.name }}</h2>
-    <p class="price">Цена: {{ product.price }}</p>
-    <p class="quantity">Количество: {{ product.quantity }}</p>
+    <p class="price">$ {{ product.price }}</p>
+    <p class="quantity">В наличии: {{ product.quantity }}</p>
     <button (click)="buyProduct()">Купить</button>
     <p class="description">{{ product.description }}</p>
   </div>
