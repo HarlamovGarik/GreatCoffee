@@ -37,4 +37,9 @@ export class ApiService {
     return this.http.get<ProductDTO[]>(`${this.BACKEND_URL}/get/product/category/${id}`)
 
   }
+
+  getProductById(productId: number): Observable<ProductDTO> {
+    const url = `${this.BACKEND_URL}/by/id/${productId}`;
+    return this.http.get<ProductDTO>(url);
+  }
 }
