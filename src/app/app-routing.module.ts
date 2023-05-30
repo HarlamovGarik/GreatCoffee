@@ -23,7 +23,7 @@ const routes: Routes = [
           {path: 'not-found', component: NotFoundComponent}
         ]
       },
-      {path: ':id-parent-catalog/:id-catalog/:id', component: ProductPageComponent},
+      {path: 'product/:id', component: ProductPageComponent},
     ]
   },
   {

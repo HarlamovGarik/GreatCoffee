@@ -2,7 +2,7 @@ ul {
   list-style: none;
 }
 .body-section {
-  width: calc(100% - min(max(10px, 4vw), 80px) * 2);
+  width: 100%;
   padding: 0 min(max(10px, 4vw), 80px);
   background-color: rgb(56, 56, 56);
 

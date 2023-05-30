@@ -1,17 +1,9 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false,
   BACKEND_URL: 'http://localhost:8080'
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+export const SVG = {
+  BASKET: "M55.8,17.6h-8.2c0,0,0-0.1-0.1-0.1L38,0.7c-0.2-0.3-0.6-0.6-1-0.6c-0.2,0-0.3,0-0.6,0.1c-0.6,0.3-0.7,1-0.4,1.5l9.1,15.8h-3.5l0,0H15.5l0,0l9.3-16c0.2-0.3,0.1-0.9-0.3-1.1l-0.6-0.3C23.5-0.1,23,0,22.8,0.4l-9.9,17.1H4.3c-2.4,0-4.3,2-4.3,4.4c0,2.1,1.4,4,3.4,4.3l5.1,20.9c0.9,3.4,3.9,5.9,7.3,5.9h28.5c3.5,0,6.5-2.4,7.3-5.9l5.1-20.9c2-0.4,3.4-2.2,3.4-4.3C60.1,19.6,58.2,17.6,55.8,17.6z M55.8,24.2h-0.9l-5.4,22.4c-0.6,2.4-2.8,4.2-5.2,4.2H15.8c-2.4,0-4.5-1.8-5.2-4.2L5.2,24.2H4.3c-1.1,0-2.1-1-2.1-2.2c0-1.2,1-2.2,2.1-2.2h9.3l0,0h3l0,0h27l0,0h3l0,0h9.3c1.1,0,2.1,1,2.1,2.2C57.9,23.2,56.9,24.2,55.8,24.2zM18.8,43.1L18.8,43.1c-0.9,0-1.7-0.8-1.7-1.7V29.3c0-0.9,0.8-1.7,1.7-1.7l0,0c0.9,0,1.7,0.8,1.7,1.7v12.2C20.4,42.3,19.7,43.1,18.8,43.1z M30,43.1L30,43.1c-0.9,0-1.7-0.8-1.7-1.7V29.3c0-0.9,0.8-1.7,1.7-1.7l0,0c0.9,0,1.7,0.8,1.7,1.7v12.2C31.7,42.3,30.9,43.1,30,43.1z M41.3,43.1L41.3,43.1c-0.9,0-1.7-0.8-1.7-1.7V29.3c0-0.9,0.8-1.7,1.7-1.7l0,0c0.9,0,1.7,0.8,1.7,1.7v12.2C43,42.3,42.2,43.1,41.3,43.1z",
+  IN_BASKET: "M60.2,23.5c0,1.8-1.5,3.3-3.4,3.3l-5.4,21.8c-0.7,3-3.4,5.1-6.5,5.1H15.1c-3.1,0-5.8-2.1-6.5-5.1L3.2,26.8c-1.9,0-3.4-1.5-3.4-3.3c0-1.9,1.5-3.4,3.4-3.4h9l9.8-18.8c0.6-1.2,2.2-1.7,3.4-1.1c1.2,0.6,1.7,2.2,1.1,3.4l-8.5,16.4h24.4L33.6,3.7c-0.6-1.2-0.2-2.8,1.1-3.4c1.2-0.6,2.8-0.1,3.4,1.1l9.8,18.8c-0.7-0.1-1.5,0.2-2.1,0.7L27.2,39.4L18.9,31c-1-1-2.6-1-3.6,0c-1,1-1,2.6,0,3.6l10.2,10.2c1,1,2.6,1,3.6,0l20.3-20.3c1-1,1-2.6,0-3.6c-0.4-0.4-0.9-0.6-1.4-0.7h8.9C58.7,20.1,60.2,21.6,60.2,23.5",
+}

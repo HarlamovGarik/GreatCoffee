@@ -1,5 +1,4 @@
 /*categories*/
-
 .categories-index {
   border-top: 4px solid orange;
   padding-top: min(max(20px, 12vh), 120px);
@@ -55,11 +54,11 @@
     }
   }
 }
-
 /*catalog*/
 .catalog-index {
   padding-top: min(max(20px, 12vh), 120px);
   padding-bottom: min(max(20px, 20vh), 220px);
+  border-bottom: 4px solid orange;
   .catalog-header {
     padding-bottom: 30px;
     border-bottom: 4px solid orange;
@@ -83,13 +82,11 @@
         text-align: left;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         .item-parent{
-          padding-left: 20px;
+          padding: 0 20px;
           margin-bottom: 29px;
           font-size: 24px;
           color: orange;
-          border-bottom: 1px solid transparent;
           cursor: pointer;
           user-select: none;
           transition: all 220ms ease-in-out;
@@ -97,7 +94,6 @@
           &:hover, &:focus{
             color: #E8382E;
             transform: translateX(20px);
-            border-bottom-color: #E8382E;
           }
         }
       }
@@ -108,11 +104,42 @@
         padding-left: 10px;
         padding-top: 10px;
         display: grid;
-        grid-row-gap: 10px;
-        grid-column-gap: 10px;
+        gap: 10px;
         grid-template-columns: repeat(auto-fill, minmax(min(250px, 18vmax), 1fr));
-
-
+        gc-product-tile {
+          display: list-item;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px){
+  .catalog-index {
+    .main-catalog {
+      flex-direction: column;
+      .catalog-aside {
+        width: 100%;
+        padding: 20px;
+        max-width: unset;
+        border: 4px solid orange;
+        border-top: none;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        .product-categories {
+          flex-direction: row;
+          .item-parent{
+            margin: 0;
+            transform: translateY(6px);
+            &:hover, &:focus{
+              transform: translateY(-6px);
+            }
+          }
+        }
+      }
+      .products-index .products-list{
+        padding: 0;
+        gap: 0;
       }
     }
   }

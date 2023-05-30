@@ -1,0 +1,121 @@
+.footer-distributed{
+  background-color: rgb(34, 34, 34);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding-top: 40px;
+
+  .main-body{
+    display: flex;
+    width: 100%;
+    font: bold 16px sans-serif;
+    .footer-center{
+      width: 30%;
+      height: 200px;
+    }
+    .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .footer-left{
+      width: 30%;
+      height: 200px;
+    }
+  }
+}
+
+.footer-distributed h5{
+  color:white;
+  font: normal 36px 'cookie', cursive;
+  margin: 0;
+}
+.footer-distributed h5 span{
+  color: orange;
+}
+.footer-distributed .footer-links{
+  color:white;
+  margin: 20px 0 12px;
+}
+.footer-distributed .footer-links a{
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: all 220ms ease-in-out;
+  color: orange;
+  &:hover{
+    border-bottom-color: red;
+    color: red;
+  }
+}
+.footer-distributed .footer-company-name{
+  color: azure;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-center i{
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  text-align:  center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: white;
+  vertical-align: middle;
+  margin: 0;
+}
+.footer-distributed .footer-center p span{
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+.footer-distributed .footer-center p a{
+  color: orange;
+  text-decoration: none;
+}
+.footer-distributed .footer-right{
+  width: 30%;
+  height: 200px;
+}
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:white;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+  padding-top: 17px;
+}
+.footer-distributed .footer-company-about span{
+  display: block;
+  color: orange;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+@media(max-width: 880px){
+  .footer-distributed .footer-links, .footer-distributed .footer-center, .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}

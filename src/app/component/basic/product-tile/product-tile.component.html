@@ -1,3 +1,21 @@
-<div class="tile">
-
+<div class="tile" [class.--disabled]="isDisabled()">
+  <div class="img-container" [routerLink]="'product/'+item.id">
+    <img [src]="item.image" [alt]="item.name" [title]="item.name">
+  </div>
+  <div class="bottom-desc">
+    <p class="name text-b">
+      {{item.name}}
+    </p>
+    <div class="box-container">
+      <p class="price text-b">
+        {{item.price}}
+      </p>
+      <button class="buy-btn" (click)="putInBasket()" [class.--in-basket]="inBasket()">
+        <span>{{isDisabled() ? 'Немає в наяності' : inBasket() ? 'У кошику' : 'В кошик'}}</span>
+        <svg viewBox="0 0 60 60">
+          <path [attr.d]="inBasket() ? svg.IN_BASKET : svg.BASKET"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>

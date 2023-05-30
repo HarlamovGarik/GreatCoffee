@@ -19,6 +19,7 @@ import { ProductPageComponent } from './component/page/product.page/product.page
 import { HeaderComponent } from './component/basic/header/header.component';
 import { FooterComponent } from './component/basic/footer/footer.component';
 import { ProductTileComponent } from './component/basic/product-tile/product-tile.component';
+import { BasketPopupMenuComponent } from './component/basic/basket-popup-menu/basket-popup-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProductTileComponent } from './component/basic/product-tile/product-til
     HeaderComponent,
     FooterComponent,
     ProductTileComponent,
+    BasketPopupMenuComponent,
   ],
   imports: [
     BrowserModule,
