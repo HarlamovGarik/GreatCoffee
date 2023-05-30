@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductDTO} from "../../../DTO/product.dto";
 import {SVG} from "../../../../environments/environment";
 import {BasketStorageService} from "../../../service/storage/basket.storage.service";
@@ -20,7 +20,7 @@ export class ProductTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Output() item: ProductDTO | any = {
+  @Input() item: ProductDTO | any = {
     amount: 2,
     id: 0,
     image: "https://imperial-coffee.shop/wp-content/uploads/2023/05/4546223695_jelini-marmelad-serdtse.jpg",

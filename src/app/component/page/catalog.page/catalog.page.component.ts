@@ -12,6 +12,7 @@ import {CategoriesDTO} from "../../../DTO/categories.dto";
 })
 export class CatalogPageComponent implements OnInit {
 
+  public parentCategories!: CategoriesDTO[];
   public products!: ProductDTO[];
   public filteredData!: ProductDTO[];
   public categories!: CategoriesDTO[];
@@ -34,10 +35,15 @@ export class CatalogPageComponent implements OnInit {
       this.applyNewOrder(orderByValue);
     });
   }
+
   protected getData(){
     this.activatedRoute.params.subscribe(params => {
       const parentId = params['id-parent-catalog'];
       const id = params['id-catalog'];
+
+      this.apiService.getAllParentCategories().subscribe(res =>{
+        this.parentCategories = res;
+      })
 
       if(!id && !parentId){
         console.log('all')
@@ -48,7 +54,7 @@ export class CatalogPageComponent implements OnInit {
         this.apiService.getALLProductList().subscribe(res => {
           this.products = res;
           console.log('all products id')
-          this.filteredData = this.products;
+          this.filteredData = res;
         });
       }
 
@@ -63,7 +69,7 @@ export class CatalogPageComponent implements OnInit {
         this.apiService.getALLProductListByParentCategories(parentId).subscribe(res => {
           this.products = res;
           console.log('products by parent categories id')
-          this.filteredData = this.products;
+          this.filteredData = res;
         });
 
         this.apiService.getAllCategoriesByParent(parentId).subscribe(res =>{
@@ -76,7 +82,7 @@ export class CatalogPageComponent implements OnInit {
         this.apiService.getALLProductListByCategories(id).subscribe(res => {
           this.products = res;
           console.log('products by categories id')
-          this.filteredData = this.products;
+          this.filteredData = res;
         });
       }
     });

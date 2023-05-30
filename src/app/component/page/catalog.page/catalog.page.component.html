@@ -3,43 +3,43 @@
     <h2 class="title-category main-title">Категорії</h2>
       <ul class="category-list">
 
-        <li class="category-item">
-          <a [routerLink]="" class="category-container">
+        <li class="category-item" *ngFor="let category of categories">
+          <a [routerLink]="category.id" class="category-container">
             <div class="category-content">
               <div class="category-image">
-                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-1.png" alt="Coffee">
+                <img [src]="category.image" [alt]="category.name">
               </div>
               <div class="wrapper-block">
-                <h4 class="category-title">Кофе</h4>
+                <h4 class="category-title">{{category.name}}</h4>
               </div>
             </div>
           </a>
         </li>
 
-        <li class="category-item">
-          <a [routerLink]="" class="category-container">
-            <div class="category-content">
-              <div class="category-image">
-                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-5.png" alt="tea">
-              </div>
-              <div class="wrapper-block">
-                <h4 class="category-title">Чай</h4>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category-item">
-          <a [routerLink]="" class="category-container">
-            <div class="category-content">
-              <div class="category-image">
-                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-4.png" alt="syrups">
-              </div>
-              <div class="wrapper-block">
-                <h4 class="category-title">Сіроп</h4>
-              </div>
-            </div>
-          </a>
-        </li>
+<!--        <li class="category-item">-->
+<!--          <a [routerLink]="" class="category-container">-->
+<!--            <div class="category-content">-->
+<!--              <div class="category-image">-->
+<!--                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-5.png" alt="tea">-->
+<!--              </div>-->
+<!--              <div class="wrapper-block">-->
+<!--                <h4 class="category-title">Чай</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="category-item">-->
+<!--          <a [routerLink]="" class="category-container">-->
+<!--            <div class="category-content">-->
+<!--              <div class="category-image">-->
+<!--                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-4.png" alt="syrups">-->
+<!--              </div>-->
+<!--              <div class="wrapper-block">-->
+<!--                <h4 class="category-title">Сіроп</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--        </li>-->
       </ul>
   </main>
 </section>
