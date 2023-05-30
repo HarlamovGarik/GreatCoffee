@@ -90,6 +90,7 @@
           cursor: pointer;
           user-select: none;
           transition: all 220ms ease-in-out;
+          text-transform: capitalize;
           p{margin-bottom: 12px;}
           &:hover, &:focus{
             color: #E8382E;
