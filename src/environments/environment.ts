@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  BACKEND_URL: 'http://localhost:8080'
+  BACKEND_URL: 'http://94.244.20.211:8080'
 };
 
 export const SVG = {

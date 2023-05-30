@@ -3,8 +3,6 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {ApiService} from "../../../service/api/api.service";
 import {ProductDTO} from "../../../DTO/product.dto";
 import {CategoriesDTO} from "../../../DTO/categories.dto";
-import {ProductSubscribe} from "../../../service/ProductSubscribe";
-
 
 @Component({
   selector: 'gc-catalog',
@@ -20,7 +18,6 @@ export class CatalogPageComponent implements OnInit {
   private sortedColumn: string | undefined = "";
 
   constructor(
-    protected ProductSubscribe:ProductSubscribe,
     protected apiService: ApiService,
     protected activatedRoute: ActivatedRoute,
     protected router: Router
@@ -42,7 +39,8 @@ export class CatalogPageComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const parentId = params['id-parent-catalog'];
       const id = params['id-catalog'];
-
+      const product = params['product'];
+      console.log(product)
       this.apiService.getAllParentCategories().subscribe(res =>{
         this.parentCategories = res;
       })
@@ -51,17 +49,14 @@ export class CatalogPageComponent implements OnInit {
         console.log('all')
         this.apiService.getAllParentCategories().subscribe(res =>{
           this.categories = res;
-          console.log('parents id')
         })
         this.apiService.getALLProductList().subscribe(res => {
-
           this.products = res;
-          console.log('all products id')
           this.filteredData = res;
         });
       }
 
-      if (parentId == 'all') {
+      if (parentId == 'all' || id == 'all') {
         this.router.navigate(['']);
         return;
       }
@@ -71,20 +66,17 @@ export class CatalogPageComponent implements OnInit {
         console.log(parentId)
         this.apiService.getALLProductListByParentCategories(parentId).subscribe(res => {
           this.products = res;
-          console.log('products by parent categories id')
           this.filteredData = res;
         });
 
         this.apiService.getAllCategoriesByParent(parentId).subscribe(res =>{
           this.categories = res;
-          console.log('categories by parent id')
         })
 
       } else if(id){
         console.log(id)
         this.apiService.getALLProductListByCategories(id).subscribe(res => {
           this.products = res;
-          console.log('products by categories id')
           this.filteredData = res;
         });
       }

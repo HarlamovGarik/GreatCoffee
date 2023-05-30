@@ -67,12 +67,19 @@
     justify-content: space-between;
     align-items: center;
     align-content: flex-start;
+    .title-catalog{
+      cursor: pointer;
+      user-select: none;
+      &:hover, &:focus{
+        color: red;
+      }
+    }
   }
   .main-catalog{
     display: flex;
     .catalog-aside {
       border-right: 4px solid orange;
-      max-width: 300px;
+      max-width: 360px;
       padding: 20px 12px 40px;
       background-color: rgb(70 70 70);
       width: 100%;
@@ -141,6 +148,7 @@
       .products-index .products-list{
         padding: 0;
         gap: 0;
+        border-left: 4px solid orange;
       }
     }
   }

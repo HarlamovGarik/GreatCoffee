@@ -9,7 +9,16 @@
       <button class="find-btn" (click)="searchProduct(searchPanel.value)">Знайти</button>
     </div>
   </header>
-  <main>
 
+  <main class="search-result" *ngIf="searchList">
+    <div class="result-box"><p>Знайдено</p><p class="count">{{searchList.length}}</p></div>
+    <ul>
+      <li *ngFor="let res of searchList" class="item-result" title="Перейти на продукт" [routerLink]="'product/'+res.id">
+        <div class="img-block" [title]="res.image">
+          <img [src]="res.image" [alt]="res.image" height="100px">
+        </div>
+        <p>{{res.name}}</p>
+      </li>
+    </ul>
   </main>
 </div>

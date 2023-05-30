@@ -4,7 +4,7 @@
       <ul class="category-list">
 
         <li class="category-item" *ngFor="let category of parentCategories">
-          <a [routerLink]="category.id.toString()" class="category-container">
+          <a [routerLink]="'/'+category.id.toString()" class="category-container">
             <div class="category-content">
               <div class="category-image">
                 <img [src]="category.image" [alt]="category.name">
@@ -15,31 +15,6 @@
             </div>
           </a>
         </li>
-
-<!--        <li class="category-item">-->
-<!--          <a [routerLink]="" class="category-container">-->
-<!--            <div class="category-content">-->
-<!--              <div class="category-image">-->
-<!--                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-5.png" alt="tea">-->
-<!--              </div>-->
-<!--              <div class="wrapper-block">-->
-<!--                <h4 class="category-title">Чай</h4>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="category-item">-->
-<!--          <a [routerLink]="" class="category-container">-->
-<!--            <div class="category-content">-->
-<!--              <div class="category-image">-->
-<!--                <img src="https://imperial-coffee.shop/wp-content/uploads/2021/02/cat-4.png" alt="syrups">-->
-<!--              </div>-->
-<!--              <div class="wrapper-block">-->
-<!--                <h4 class="category-title">Сіроп</h4>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </a>-->
-<!--        </li>-->
       </ul>
   </main>
 </section>
@@ -47,24 +22,23 @@
 <section class="catalog-index body-section" id="catalog">
   <div class="catalog-wrapper main-body">
     <header class="catalog-header">
-      <h2 class="title-catalog main-title">Каталог</h2>
-
+      <h2 class="title-catalog main-title" routerLink="" title="На головну">Каталог</h2>
     </header>
     <div class="main-catalog">
       <aside class="catalog-aside" *ngIf="categories">
           <ul class="product-categories">
             <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id.toString()">
-              <a><p>{{category.name}}</p></a>
+              <a><p>{{category.name.toLowerCase()}}</p></a>
             </li>
 
             <li tabindex="2" class="item-parent" routerLink="all">
-              <a><p>Всі категорії</p></a>
+              <a><p>Всі продукти</p></a>
             </li>
           </ul>
       </aside>
       <section class="products-index">
         <ul class="products-list">
-          <gc-product-tile *ngFor="let item of products" [item]="item"></gc-product-tile>
+          <gc-product-tile *ngFor="let item of filteredData" [item]="item"></gc-product-tile>
         </ul>
       </section>
     </div>

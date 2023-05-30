@@ -6,7 +6,6 @@ import {NotFoundComponent} from "./component/page/not-found/not-found.component"
 import {IntroductionPageComponent} from "./component/page/introduction.page/introduction.page.component";
 import {ProductPageComponent} from "./component/page/product/product.page.component";
 
-
 const routes: Routes = [
   {
     path: '',
@@ -20,10 +19,11 @@ const routes: Routes = [
           {path: 'catalog', redirectTo: '', pathMatch: 'full'},
           {path: ':id-parent-catalog', component: CatalogPageComponent},
           {path: ':id-parent-catalog/:id-catalog', component: CatalogPageComponent},
+
+          {path: 'product/:id', component: ProductPageComponent},
           {path: 'not-found', component: NotFoundComponent}
         ]
       },
-      {path: 'product/:id', component: ProductPageComponent},
     ]
   },
   {
