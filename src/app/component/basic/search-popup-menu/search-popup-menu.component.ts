@@ -30,7 +30,7 @@ export class SearchPopupMenuComponent implements OnInit {
   }
   searchProductList(value: string){
     if(value && value.trim() !=='' && this.products){
-      this.searchList = this.products.filter((product: ProductDTO) => product.name.toLowerCase().includes(value))
+      this.searchList = this.products.filter((product: ProductDTO) => product.name.toLowerCase().includes(value.toLowerCase()))
     }
   }
 }
