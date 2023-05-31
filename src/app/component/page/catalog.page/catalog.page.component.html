@@ -35,13 +35,13 @@
       <aside class="catalog-aside">
           <ul class="product-categories">
             <li tabindex="2" class="item-parent" (click)="prevStep()">
-              <i class="fa-solid fa-backward"></i>Назад
+              <i class="fa-solid fa-backward hidden"></i>Назад
             </li>
             <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id.toString()">
-              <a><p>{{category.name.toLowerCase()}} <i class="fa-solid fa-forward"></i></p></a>
+              <a><p>{{category.name.toLowerCase()}} <i class="fa-solid fa-forward hidden"></i></p></a>
             </li>
             <li tabindex="2" class="item-parent" routerLink="all">
-              <a><p>Всі продукти</p></a>
+              <a><p>Усе</p></a>
             </li>
           </ul>
       </aside>
