@@ -4,4 +4,5 @@ export interface ProductDTO {
   image: string,
   price: number,
   amount: number
+  userAmount?: number,
 }

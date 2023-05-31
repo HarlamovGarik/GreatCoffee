@@ -1,1 +1,14 @@
-<p>basket-popup-menu works!</p>
+<div class="basket-list main-box">
+  <header>
+    <p>Всього&nbsp;<span>{{totalPrice()}}&nbsp;₴</span></p>
+  </header>
+  <main class="search-result" *ngIf="basketList">
+    <ul *ngFor="let item of basketList; let last = last">
+      <fc-basket-item [item]="item" (deleteEventEmit)="deleteItemFromBasket($event)" [last]="last">
+
+      </fc-basket-item>
+    </ul>
+  </main>
+</div>
+
+
