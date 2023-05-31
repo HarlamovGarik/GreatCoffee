@@ -38,6 +38,15 @@
           </mat-tab>
           <mat-tab [label]="product.review.length > 0 ? product.review.length + ' Коментарі' : 'Коментарі'">
             <div class="comments-group">
+              <header class="comment-box">
+                <div class="search-panel">
+                  <div class="search-box">
+                    <input [(ngModel)]="comment" type="text" placeholder="Коментарій..." (keydown.enter)="postComment(comment)">
+                  </div>
+
+                  <button class="find-btn" [disabled]="commentIsDisabled(comment)" (click)="postComment(comment)">Залишити коментар</button>
+                </div>
+              </header>
               <ul>
                 <li class="description" *ngFor="let message of product.review">
                     {{message.comment}}

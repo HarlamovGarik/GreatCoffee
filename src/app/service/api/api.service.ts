@@ -42,7 +42,7 @@ export class ApiService {
     return this.http.get<FullProductDTO>(`${this.BACKEND_URL}/get/product/by/id/${productId}`);
   }
 
-  postNewComment(productId: number, comment: string){
-    return this.http.post<string>(`${this.BACKEND_URL}/create/${productId}`, comment);
+  postNewComment(productId: number, comment: string): Observable<FullProductDTO> {
+    return this.http.post<FullProductDTO>(`${this.BACKEND_URL}/create/${productId}`, comment);
   }
 }

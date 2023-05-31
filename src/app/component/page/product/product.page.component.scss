@@ -29,7 +29,7 @@
 }
 
 .product-info {
-  max-width: max(600px, 46vw);
+  max-width: max(660px, 46vw);
   border-left: 2px solid orange;
   border-radius: 0 20px 20px 0;
   min-height: inherit;
@@ -156,6 +156,55 @@ p {
   font-size: 18px;
   color: #555555;
   text-align: justify;
+}
+
+header{
+  padding: 20px 0;
+  border-bottom: 1px solid #383838;
+  margin-bottom: 20px;
+
+  .search-panel{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+
+    .find-btn{
+      cursor: pointer;
+      user-select: none;
+      border: 2px solid rgb(47, 47, 47);
+      padding: 10px 16px;
+      border-radius: 8px;
+      background-color: #2d2d2d;
+      font-size: 22px;
+      transition: all 220ms ease-in-out;
+      color: orange;
+      &:hover{
+        border-color: orange;
+      }
+      &:not(&:disabled):active, &:not(&:disabled):focus{
+        color: #fff;
+        background-color: orange;
+        border-color: orange;
+      }
+      &:disabled{
+        cursor: not-allowed;
+        color: rgb(89, 89, 89);
+      }
+    }
+    .search-box{
+      border: 2px solid rgb(47, 47, 47);
+      padding: 10px 16px;
+      border-radius: 8px;
+
+      input{
+        color: orange;
+        flex-grow: 1;
+        font-size: 22px;
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {

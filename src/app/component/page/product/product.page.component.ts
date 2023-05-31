@@ -22,22 +22,31 @@ export class ProductPageComponent implements OnInit {
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     review: []
   };
+  public comment: string = "";
   public svg = SVG;
   constructor(private activatedRote: ActivatedRoute,
-              private api: ApiService,
+              private apiService: ApiService,
               private popupService: PopupService,
               private basketStorageService: BasketStorageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRote.snapshot.paramMap.get('id');
     if(id){
-      this.api.getProductById(id).subscribe(product => {
+      this.apiService.getProductById(id).subscribe(product => {
         this.product = product
         this.product.userAmount = this.basketStorageService.hasProductById(this.product.id) ? this.basketStorageService.getProductById(this.product.id).userAmount : 1;
       });
     }
   }
-
+  public postComment(value: string){
+    this.apiService.postNewComment(this.product.id, value).subscribe(res =>{
+      this.product = res;
+      this.comment = "";
+    });
+  }
+  public commentIsDisabled(value:string): boolean{
+    return value.trim().length <= 10
+  }
   public inBasket(){return this.basketStorageService.hasProductById(this.product.id);}
   public isDisabled(): boolean{return this.product.amount == 0}
   public changeCount(value: number) {
