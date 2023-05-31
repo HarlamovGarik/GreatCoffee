@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
 import {PopupService} from "../../../service/popup/popup.service";
+import {BasketStorageService} from "../../../service/storage/basket.storage.service";
 
 @Component({
   selector: 'gc-header',
@@ -8,7 +9,9 @@ import {PopupService} from "../../../service/popup/popup.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private popupService: PopupService) {
+  constructor(
+    private popupService: PopupService,
+    private basketService: BasketStorageService) {
   }
 
   @ViewChild('headerBox') headerBox!: ElementRef;
@@ -30,6 +33,12 @@ export class HeaderComponent implements OnInit {
     observer.observe(this.headerBox.nativeElement);
   }
   openSearchPanel(){
-    this.popupService.openSearch()
+    this.popupService.openSearch();
+  }
+  openBasketPanel(){
+    this.popupService.openBasket();
+  }
+  countInBasket(): number{
+    return this.basketService.getALLProducts().length;
   }
 }

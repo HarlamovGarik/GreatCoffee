@@ -7,7 +7,7 @@
         <li title="На головну" tabindex="1" class="panel"><a class="index">Головна</a></li>
         <li title="Про нас" tabindex="1" class="panel"><a>Про нас</a></li>
         <li title="Знайти товар" tabindex="1" class="search-panel panel" (click)="openSearchPanel()"><a><i class="fa-solid fa-magnifying-glass"></i>Пошук</a></li>
-        <li title="Кошик" tabindex="1" class="panel"><a><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+        <li title="Кошик" tabindex="1" class="panel"><a (click)="openBasketPanel()"><i class="fa fa-shopping-bag" aria-hidden="true"></i>{{countInBasket() > 0 ? countInBasket() + ' в кошику' : ''}}</a></li>
       </ul>
     </nav>
   </header>
