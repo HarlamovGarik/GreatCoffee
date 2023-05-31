@@ -1,5 +1,5 @@
 <div class="tile" [class.--disabled]="isDisabled()">
-  <div class="img-container" [routerLink]="'product/'+item.id">
+  <div class="img-container" [routerLink]="'/product/'+item.id">
     <img [src]="item.image" [alt]="item.name" [title]="item.name">
   </div>
   <div class="bottom-desc">

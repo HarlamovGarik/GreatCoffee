@@ -36,9 +36,8 @@ export class ProductPageComponent implements OnInit {
         this.product.userAmount = this.basketStorageService.hasProductById(this.product.id) ? this.basketStorageService.getProductById(this.product.id).userAmount : 1;
       });
     }
-    // @ts-ignore
-
   }
+
   public inBasket(){return this.basketStorageService.hasProductById(this.product.id);}
   public isDisabled(): boolean{return this.product.amount == 0}
   public changeCount(value: number) {
@@ -56,5 +55,4 @@ export class ProductPageComponent implements OnInit {
       this.popupService.openBasket()
     }
   }
-
 }
