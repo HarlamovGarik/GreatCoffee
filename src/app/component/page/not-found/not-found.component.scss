@@ -1,0 +1,36 @@
+.body-section{
+  background-image: url("../../../../assets/img-assets/not-found-page.jpeg");
+  background-size: cover;
+  background-position: top 25% right 0;
+  padding-bottom: 40px;
+  border-top: 4px solid orange;
+  min-height: min(60vh, 600px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .main-body{
+    text-align: left;
+    color: orange;
+    font-size: min(10vw, 120px);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: min(8.2vw, 100px);
+    letter-spacing: -6px;
+    @for $i from 1 through 3 {
+      :nth-child(#{$i}) {
+        margin-left: $i * 88px;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 800px){
+  .body-section{
+    ul.main-body{
+      line-height: unset;
+      text-align: center;
+      li{
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

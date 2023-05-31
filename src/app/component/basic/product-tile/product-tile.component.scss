@@ -28,7 +28,6 @@
     }
     img{
       transition: all 220ms ease-in-out;
-      width: 100%;
       max-height: 260px;
     }
   }
@@ -37,7 +36,7 @@
     padding: 12px 20px 16px;
     background-color: rgb(70 70 70);
     p.text-b{
-      color: #141212;
+      color: #e0e0e0;
       font-weight: 700;
       font-size: 18px;
       line-height: 24px;

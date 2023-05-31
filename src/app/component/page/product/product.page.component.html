@@ -1,12 +1,52 @@
-<div class="product-container">
-  <div class="product-image">
-    <img [src]="product.image" alt="Изображение продукта">
+<main class="body-section">
+  <div class="main-body product-container">
+    <div class="product-page-card">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name" [title]="product.name">
+      </div>
+      <div class="product-info">
+        <h2 class="main-title">
+          {{ product.name }}
+        </h2>
+        <p class="price">{{ product.price }}&nbsp;₴</p>
+        <div class="row">
+          <p class="quantity">В наявності: {{ product.amount }}</p>
+          <p class="quantity" *ngIf="product.userAmount && product.userAmount > 1">В сумі: {{ product.userAmount * product.price }}&nbsp;₴</p>
+        </div>
+        <div class="menu-box">
+          <div class="panel" *ngIf="product">
+            <button [disabled]="product?.userAmount == 1" (click)="changeCount(-1)">
+              -
+            </button>
+            <p class="count">
+              {{product?.userAmount}}
+            </p>
+            <button [disabled]="product.userAmount == product.amount" (click)="changeCount(1)">
+              +
+            </button>
+          </div>
+          <button class="basket-btn buy-btn" [class.--in-basket]="inBasket()" (click)="addToBasket()" [disabled]="isDisabled()">
+            <span>{{isDisabled() ? 'Немає' : inBasket() ? 'У кошику' : 'В кошик'}}</span>
+            <svg viewBox="0 0 60 60">
+              <path [attr.d]="inBasket() ? svg.IN_BASKET : svg.BASKET"/>
+            </svg>
+          </button>
+        </div>
+        <mat-tab-group>
+          <mat-tab label="Опис">
+            <p class="description">{{ product.description }}</p>
+          </mat-tab>
+          <mat-tab [label]="product.review.length > 0 ? product.review.length + ' Коментарі' : 'Коментарі'">
+            <div class="comments-group">
+              <ul>
+                <li class="description" *ngFor="let message of product.review">
+                    {{message.comment}}
+                </li>
+              </ul>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
   </div>
-  <div class="product-info">
-    <h2>{{ product.name }}</h2>
-    <p class="price">$ {{ product.price }}</p>
-    <p class="quantity">В наличии: {{ product.quantity }}</p>
-    <button (click)="buyProduct()">Купить</button>
-    <p class="description">{{ product.description }}</p>
-  </div>
-</div>
+</main>

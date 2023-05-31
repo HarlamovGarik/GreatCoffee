@@ -1,6 +1,6 @@
 <div class="shopping-cart" [class.simple-view]="simpleView">
   <div class="item-product" [class.last]="last">
-    <img [src]="item.image" [alt]="item.name" class="product-img">
+    <img [src]="item.image" [alt]="item.name" class="product-img" (click)="goToPage()">
     <div *ngIf="!simpleView" class="gap"></div>
     <div class="description font">
       <p>{{item.name}}</p>

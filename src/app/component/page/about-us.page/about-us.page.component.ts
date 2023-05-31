@@ -11,5 +11,6 @@ export class AboutUsPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public window = window;
 
 }

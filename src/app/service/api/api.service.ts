@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
-import {ProductDTO} from "../../DTO/product.dto";
+import {FullProductDTO, ProductDTO} from "../../DTO/product.dto";
 import {CategoriesDTO} from "../../DTO/categories.dto";
 
 @Injectable({
@@ -38,8 +38,7 @@ export class ApiService {
 
   }
 
-  getProductById(productId: number): Observable<ProductDTO> {
-    const url = `${this.BACKEND_URL}/by/id/${productId}`;
-    return this.http.get<ProductDTO>(url);
+  getProductById(productId: string): Observable<FullProductDTO> {
+    return this.http.get<FullProductDTO>(`${this.BACKEND_URL}/get/product/by/id/${productId}`);
   }
 }

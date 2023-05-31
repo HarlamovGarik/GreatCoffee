@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProductDTO} from "../../../DTO/product.dto";
 import {BasketStorageService} from "../../../service/storage/basket.storage.service";
 import {PopupService} from "../../../service/popup/popup.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'fc-basket-item',
@@ -12,6 +13,8 @@ export class BasketItemComponent implements OnInit {
 
   constructor(
     private basketService: BasketStorageService,
+    private popupService: PopupService,
+    private router: Router
   ) {
 
   }
@@ -36,5 +39,9 @@ export class BasketItemComponent implements OnInit {
   }
   toRound(number: number){
     return Math.round(number)
+  }
+  goToPage(){
+    this.popupService.dialog.closeAll();
+    this.router.navigate(['product/' + this.item.id]);
   }
 }

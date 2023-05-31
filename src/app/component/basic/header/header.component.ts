@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     private popupService: PopupService,
     private basketService: BasketStorageService) {
   }
-
+  public window: any = window;
   @ViewChild('headerBox') headerBox!: ElementRef;
   @Output() pinnedEvent = new EventEmitter<boolean>();
   ngOnInit(): void {}

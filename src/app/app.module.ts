@@ -24,6 +24,9 @@ import {SearchPopupMenuComponent} from "./component/basic/search-popup-menu/sear
 import { BasketItemComponent } from './component/basic/basket-item/basket-item.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { SelectComponent } from './component/basic/select/select.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { ContactUsComponent } from './component/page/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -40,18 +43,21 @@ import {MatIconModule} from "@angular/material/icon";
     BasketPopupMenuComponent,
     SearchPopupMenuComponent,
     BasketItemComponent,
+    SelectComponent,
+    ContactUsComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NoopAnimationsModule,
-        HttpClientModule,
-        MatDialogModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatButtonModule,
-        MatIconModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NoopAnimationsModule,
+    HttpClientModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

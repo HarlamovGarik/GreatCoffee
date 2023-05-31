@@ -4,7 +4,7 @@
   padding-top: min(max(20px, 12vh), 120px);
   .category-item {
     font: bold 16px sans-serif;
-    min-width: 320px;
+    min-width: 300px;
     padding: 0 20px;
     display: inline-block;
     text-decoration: none;
@@ -26,7 +26,7 @@
       .category-title {
         font-style: normal;
         font-weight: 700;
-        font-size: 26px;
+        font-size: min(max(16px, 4vw), 26px);
         line-height: 22px;
         text-align: center;
         color: orange;
@@ -58,7 +58,6 @@
 .catalog-index {
   padding-top: min(max(20px, 12vh), 120px);
   padding-bottom: min(max(20px, 20vh), 220px);
-  border-bottom: 4px solid orange;
   .catalog-header {
     padding-bottom: 30px;
     border-bottom: 4px solid orange;
@@ -92,7 +91,7 @@
         .item-parent{
           padding: 0 20px;
           margin-bottom: 29px;
-          font-size: 40px;
+          font-size: min(max(16px, 4vw), 40px);
           color: orange;
           cursor: pointer;
           user-select: none;

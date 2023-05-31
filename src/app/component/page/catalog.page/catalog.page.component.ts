@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {ActivatedRoute, ParamMap, Params, Router} from "@angular/router";
 import {ApiService} from "../../../service/api/api.service";
 import {ProductDTO} from "../../../DTO/product.dto";
 import {CategoriesDTO} from "../../../DTO/categories.dto";
+
+export enum EOrder{
+  CHEAP = 'Від дешевих до дорогих',
+  EXPANSIVE = 'Від дорогих до дешевих',
+}
 
 @Component({
   selector: 'gc-catalog',
@@ -16,7 +21,8 @@ export class CatalogPageComponent implements OnInit {
   public filteredData!: ProductDTO[];
   public categories!: CategoriesDTO[];
   private sortedColumn: string | undefined = "";
-
+  public orderList = Object(EOrder);
+  public order: string = "";
   constructor(
     protected apiService: ApiService,
     protected activatedRoute: ActivatedRoute,
@@ -33,6 +39,11 @@ export class CatalogPageComponent implements OnInit {
       this.applySearchByOption(searchValue);
       this.applyNewOrder(orderByValue);
     });
+  }
+  changeOrder(order: string) {
+    this.order = order;
+    const queryParams: Params = {order};
+    this.router.navigate([], {queryParams, queryParamsHandling: 'merge'});
   }
 
   protected getData(){
@@ -109,6 +120,11 @@ export class CatalogPageComponent implements OnInit {
       case 'amount':
         comparison = a.amount - b.amount;
         break;
+    }
+    if(order == "CHEAP"){
+      comparison = a.price - b.price;
+    }else if(order == "EXPANSIVE"){
+      comparison = b.price - a.price;
     }
 
     return order !== this.sortedColumn ? -comparison : comparison;

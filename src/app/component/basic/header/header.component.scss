@@ -24,14 +24,14 @@
 
       li{
         list-style: none;
-        padding: 0 min(max(8px, 3vw), 50px);
+        padding: 0 min(max(12px, 2.6vw), 32px);
         position: relative;
 
         a{
           cursor: pointer;
           padding-bottom: 4px;
           text-decoration: none;
-          font-size: 36px;
+          font-size: min(max(22px, 3.5vw), 32px);
           font-weight: 600;
           color: orange;
           user-select: none;

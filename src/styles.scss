@@ -1,3 +1,13 @@
 @import "style/_normalize.css";
 @import "style/header-box-layout";
 @import "style/popup_panel";
+
+.mat-tab-label{
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  &:focus:not(.mat-tab-disable){
+    color: orange;
+    background-color: #1e1e1e;
+  }
+}

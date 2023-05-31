@@ -23,6 +23,7 @@
   <div class="catalog-wrapper main-body">
     <header class="catalog-header">
       <h2 class="title-catalog main-title" routerLink="" title="На головну">Каталог</h2>
+      <gc-select title="Сортувати за:" [list]="orderList" [value]="order" (valueSelect)="changeOrder($event)"></gc-select>
     </header>
     <div class="main-catalog">
       <aside class="catalog-aside" *ngIf="categories">

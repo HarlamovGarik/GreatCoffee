@@ -1,0 +1,35 @@
+svg.duo-tone {
+  height: 16px;
+  opacity: 0.8;
+  .st {
+    transition: transform 300ms ease-in-out;
+  }
+
+  .st0 {
+    fill: orange;
+    transform-origin: bottom left;
+  }
+
+  .st1 {
+    fill: #d76d22;
+    transform-origin: bottom right;
+  }
+
+  &:hover{
+    opacity: 1;
+  }
+  &.arrow{
+    width: 16px;
+    .st {
+      transition: transform 300ms ease-in-out;
+    }
+    &.up:hover, &.down {
+      .st1 {transform: translateY(-100%) rotate(-90deg)}
+      .st0 {transform: translateY(-100%) rotate(90deg)}
+    }
+    &.down:hover, &.up{
+      .st1 {transform: none;}
+      .st0 {transform: none;}
+    }
+  }
+}

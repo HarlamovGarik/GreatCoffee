@@ -83,6 +83,7 @@
         background-color: #2d2d2d;
         font-size: 22px;
         transition: all 220ms ease-in-out;
+        color: orange;
 
         &:hover{
           color: orange;
@@ -95,6 +96,8 @@
         }
       }
       .search-box{
+        display: flex;
+        align-items: center;
         width: 100%;
         border: 2px solid rgb(47, 47, 47);
         padding: 10px 16px;

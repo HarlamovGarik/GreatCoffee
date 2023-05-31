@@ -19,21 +19,7 @@
         </p>
       </div>
 
-      <img class="about-us-img" src="assets/img-assets/team-3.jpg" alt="Мега робітник року">
-    </div>
-  </div>
-</section>
-
-<section class="contact-us-index body-section">
-  <div class="contact-us-wrapper main-body">
-    <h2 class="title-about main-title"><span> Зв'язатись з нами</span></h2>
-    <div class="box-container">
-      <form class="form-block" action="">
-        <input type="text" placeholder="Ім'я - Фамілія" class="box">
-        <input type="email" placeholder="Пошта" class="box">
-        <textarea name="" class="box" placeholder="Повідомлення" cols="30" rows="10"></textarea>
-        <button type="submit" value="send message" class="btn">Відправити</button>
-      </form>
+      <img *ngIf="window.innerWidth > 1000"  class="about-us-img hidden" src="assets/img-assets/team-3.jpg" alt="Мега робітник року">
     </div>
   </div>
 </section>

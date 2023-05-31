@@ -1,9 +1,10 @@
 .cdk-global-overlay-wrapper{
  justify-content: flex-start !important;
-  min-width: 400px;
-  max-width: 1200px;
+
 }
 .popup-container{
+  min-width: 560px !important;
+  max-width: 1200px !important;
   mat-dialog-container{
     border-radius: 0;
     border-right: 4px solid orange;

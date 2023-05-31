@@ -11,6 +11,8 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     children: [
+      {path: 'product/:id', component: ProductPageComponent},
+      {path: 'not-found', component: NotFoundComponent},
       {
         path: '',
         component: IntroductionPageComponent,
@@ -19,9 +21,6 @@ const routes: Routes = [
           {path: 'catalog', redirectTo: '', pathMatch: 'full'},
           {path: ':id-parent-catalog', component: CatalogPageComponent},
           {path: ':id-parent-catalog/:id-catalog', component: CatalogPageComponent},
-
-          {path: 'product/:id', component: ProductPageComponent},
-          {path: 'not-found', component: NotFoundComponent}
         ]
       },
     ]
