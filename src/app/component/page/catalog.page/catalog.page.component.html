@@ -23,15 +23,23 @@
   <div class="catalog-wrapper main-body">
     <header class="catalog-header">
       <h2 class="title-catalog main-title" routerLink="" title="На головну">Каталог</h2>
-      <gc-select title="Сортувати за:" [list]="orderList" [value]="order" (valueSelect)="changeOrder($event)"></gc-select>
+      <mat-form-field>
+        <mat-label>Сортувати за:</mat-label>
+        <select matNativeControl [(ngModel)]="order" (change)="changeOrder(order)">
+          <option value="CHEAP">Спочатку дешеві</option>
+          <option value="EXPANSIVE">Спочатку дорогі</option>
+        </select>
+      </mat-form-field>
     </header>
     <div class="main-catalog">
-      <aside class="catalog-aside" *ngIf="categories">
+      <aside class="catalog-aside">
           <ul class="product-categories">
-            <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id.toString()">
-              <a><p>{{category.name.toLowerCase()}}</p></a>
+            <li tabindex="2" class="item-parent" (click)="prevStep()">
+              <i class="fa-solid fa-backward"></i>Назад
             </li>
-
+            <li *ngFor="let category of categories" tabindex="2" class="item-parent" [routerLink]="category.id.toString()">
+              <a><p>{{category.name.toLowerCase()}} <i class="fa-solid fa-forward"></i></p></a>
+            </li>
             <li tabindex="2" class="item-parent" routerLink="all">
               <a><p>Всі продукти</p></a>
             </li>
