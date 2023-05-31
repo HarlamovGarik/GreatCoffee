@@ -20,13 +20,14 @@ import { HeaderComponent } from './component/basic/header/header.component';
 import { FooterComponent } from './component/basic/footer/footer.component';
 import { ProductTileComponent } from './component/basic/product-tile/product-tile.component';
 import { BasketPopupMenuComponent } from './component/basic/basket-popup-menu/basket-popup-menu.component';
-import {SearchPopupMenuComponent} from "./component/basic/search-popup-menu/search-popup-menu.component";
+import { SearchPopupMenuComponent } from "./component/basic/search-popup-menu/search-popup-menu.component";
 import { BasketItemComponent } from './component/basic/basket-item/basket-item.component';
-import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from "@angular/material/icon";
-import { SelectComponent } from './component/basic/select/select.component';
-import {MatTabsModule} from "@angular/material/tabs";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTabsModule } from "@angular/material/tabs";
 import { ContactUsComponent } from './component/page/contact-us/contact-us.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,6 @@ import { ContactUsComponent } from './component/page/contact-us/contact-us.compo
     BasketPopupMenuComponent,
     SearchPopupMenuComponent,
     BasketItemComponent,
-    SelectComponent,
     ContactUsComponent,
   ],
   imports: [
@@ -57,6 +57,8 @@ import { ContactUsComponent } from './component/page/contact-us/contact-us.compo
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -43,6 +43,8 @@ export class ApiService {
   }
 
   postNewComment(productId: number, comment: string): Observable<FullProductDTO> {
-    return this.http.post<FullProductDTO>(`${this.BACKEND_URL}/create/${productId}`, comment);
+    const formData = new FormData();
+    formData.append('comment', comment)
+    return this.http.post<FullProductDTO>(`${this.BACKEND_URL}/review/create/${productId}`, formData);
   }
 }

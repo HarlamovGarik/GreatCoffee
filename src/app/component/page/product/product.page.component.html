@@ -49,7 +49,10 @@
               </header>
               <ul>
                 <li class="description" *ngFor="let message of product.review">
+                  <p>
+                    <i class="fa-solid fa-message"></i>
                     {{message.comment}}
+                  </p>
                 </li>
               </ul>
             </div>

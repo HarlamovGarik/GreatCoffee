@@ -24,9 +24,13 @@ export class SearchPopupMenuComponent implements OnInit {
       this.products = res;
     });
   }
+  goToPage(res: number){
+    this.popupService.dialog.closeAll();
+    this.router.navigate(['/product/'+res.toString()])
+  }
   searchProduct(search: string){
     const queryParams: Params = {search};
-    this.router.navigate(['/catalog'], {queryParams});
+    this.router.navigate(['/catalog'], {queryParams, queryParamsHandling: 'merge'}, );
   }
   searchProductList(value: string){
     if(value && value.trim() !=='' && this.products){

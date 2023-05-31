@@ -30,6 +30,15 @@ export class ProductPageComponent implements OnInit {
               private basketStorageService: BasketStorageService) { }
 
   ngOnInit(): void {
+    this.getProduct()
+  }
+  public postComment(value: string){
+    this.apiService.postNewComment(this.product.id, value).subscribe({
+      next: () => {this.comment = "";}
+    });
+    this.getProduct()
+  }
+  public getProduct(){
     const id = this.activatedRote.snapshot.paramMap.get('id');
     if(id){
       this.apiService.getProductById(id).subscribe(product => {
@@ -37,12 +46,6 @@ export class ProductPageComponent implements OnInit {
         this.product.userAmount = this.basketStorageService.hasProductById(this.product.id) ? this.basketStorageService.getProductById(this.product.id).userAmount : 1;
       });
     }
-  }
-  public postComment(value: string){
-    this.apiService.postNewComment(this.product.id, value).subscribe(res =>{
-      this.product = res;
-      this.comment = "";
-    });
   }
   public commentIsDisabled(value:string): boolean{
     return value.trim().length <= 10

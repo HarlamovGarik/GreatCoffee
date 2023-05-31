@@ -13,7 +13,7 @@
   <main class="search-result" *ngIf="searchList">
     <div class="result-box"><p>Знайдено</p><p class="count">{{searchList.length}}</p></div>
     <ul>
-      <li *ngFor="let res of searchList" class="item-result" title="Перейти на продукт" [routerLink]="'product/'+res.id">
+      <li *ngFor="let res of searchList" class="item-result" title="Перейти на продукт" (click)="goToPage(res.id)">
         <div class="img-block" [title]="res.image">
           <img [src]="res.image" [alt]="res.image" height="100px">
         </div>

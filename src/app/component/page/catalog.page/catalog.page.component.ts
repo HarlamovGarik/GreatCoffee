@@ -4,11 +4,6 @@ import {ApiService} from "../../../service/api/api.service";
 import {ProductDTO} from "../../../DTO/product.dto";
 import {CategoriesDTO} from "../../../DTO/categories.dto";
 
-export enum EOrder{
-  CHEAP = 'Від дешевих до дорогих',
-  EXPANSIVE = 'Від дорогих до дешевих',
-}
-
 @Component({
   selector: 'gc-catalog',
   templateUrl: './catalog.page.component.html',
@@ -21,12 +16,11 @@ export class CatalogPageComponent implements OnInit {
   public filteredData!: ProductDTO[];
   public categories!: CategoriesDTO[];
   private sortedColumn: string | undefined = "";
-  public orderList = Object(EOrder);
-  public order: string = "";
+  public order: string = '';
   constructor(
-    protected apiService: ApiService,
-    protected activatedRoute: ActivatedRoute,
-    protected router: Router
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
 
   }
@@ -40,8 +34,8 @@ export class CatalogPageComponent implements OnInit {
       this.applyNewOrder(orderByValue);
     });
   }
+
   changeOrder(order: string) {
-    this.order = order;
     const queryParams: Params = {order};
     this.router.navigate([], {queryParams, queryParamsHandling: 'merge'});
   }
@@ -93,22 +87,22 @@ export class CatalogPageComponent implements OnInit {
       }
     });
   }
-
-  applySearchByOption(searchValue: string | undefined, option='name') {
+  public prevStep(){
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+  }
+  public applySearchByOption(searchValue: string | undefined, option='name') {
     if(searchValue && searchValue.trim() !=='' && this.products){
       // @ts-ignore
       this.filteredData = this.products.filter((product: ProductDTO) => product[option].toLowerCase().includes(searchValue))
     }else this.filteredData = this.products
   }
-
-  applyNewOrder(order: string | undefined) {
+  public applyNewOrder(order: string | undefined) {
     if(order != undefined) {
       this.filteredData.sort((a, b) => this.compare(a,b,order))
       this.sortedColumn = order;
     }
   }
-
-  compare(a: ProductDTO, b: ProductDTO, order: string): number {
+  public compare(a: ProductDTO, b: ProductDTO, order: string): number {
     let comparison = 0;
     switch (order) {
       case 'name':
@@ -122,9 +116,9 @@ export class CatalogPageComponent implements OnInit {
         break;
     }
     if(order == "CHEAP"){
-      comparison = a.price - b.price;
-    }else if(order == "EXPANSIVE"){
       comparison = b.price - a.price;
+    }else if(order == "EXPANSIVE"){
+      comparison = a.price - b.price;
     }
 
     return order !== this.sortedColumn ? -comparison : comparison;
