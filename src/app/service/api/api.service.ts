@@ -41,4 +41,8 @@ export class ApiService {
   getProductById(productId: string): Observable<FullProductDTO> {
     return this.http.get<FullProductDTO>(`${this.BACKEND_URL}/get/product/by/id/${productId}`);
   }
+
+  postNewComment(productId: number, comment: string){
+    return this.http.post<string>(`${this.BACKEND_URL}/create/${productId}`, comment);
+  }
 }

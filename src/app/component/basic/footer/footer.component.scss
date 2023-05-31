@@ -9,11 +9,15 @@
     display: flex;
     width: 100%;
     font: bold 16px sans-serif;
+    .gap{
+      flex-grow: 1;
+    }
     .footer-center{
-      width: 30%;
-      height: 200px;
+      flex-grow: 1;
+      text-align: left;
     }
     .footer-right {
+      flex-grow: 1;
       display: inline-block;
       vertical-align: top;
       .about-company{
@@ -21,8 +25,7 @@
       }
     }
     .footer-left{
-      width: 30%;
-      height: 200px;
+      flex-grow: 1;
     }
   }
 }
