@@ -52,4 +52,8 @@ export class HeaderComponent implements OnInit {
     // this.router
   }
 
+  scrollToMainPage() {
+    const rootElement = document.documentElement || document.body;
+    rootElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

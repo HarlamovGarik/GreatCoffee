@@ -1,10 +1,10 @@
-<div #headerBox class="body-section header">
+<div #headerBox class="body-section header" id="mainPage">
   <header class="header-box main-body">
     <a routerLink=""><img src="assets/img-assets/favicon.png" class="logo" alt="logo-type"></a>
 
     <nav>
       <ul id="nav">
-        <li title="На головну" tabindex="1" class="panel" routerLink=""><a class="index">Головна</a></li>
+        <li title="На головну" tabindex="1" class="panel" routerLink=""><a class="index" (click)="scrollToMainPage()">Головна</a></li>
         <li title="Про нас" tabindex="1" class="panel"><a (click)="scrollToAboutUs()">Про&nbsp;нас</a></li>
         <li title="Знайти товар" tabindex="1" class="search-panel panel" (click)="openSearchPanel()"><a><i
           class="fa-solid fa-magnifying-glass"></i><span *ngIf="window.innerWidth >= 1000">Пошук</span></a></li>
