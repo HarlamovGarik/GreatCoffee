@@ -1,6 +1,7 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
 import {PopupService} from "../../../service/popup/popup.service";
 import {BasketStorageService} from "../../../service/storage/basket.storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'gc-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private popupService: PopupService,
-    private basketService: BasketStorageService) {
+    private basketService: BasketStorageService,
+    private router:Router) {
   }
   public window: any = window;
   @ViewChild('headerBox') headerBox!: ElementRef;
@@ -41,4 +43,13 @@ export class HeaderComponent implements OnInit {
   countInBasket(): number{
     return this.basketService.getALLProducts().length;
   }
+
+  scrollToAboutUs() {
+    const aboutUsElement = document.getElementById('aboutUs');
+    if (aboutUsElement) {
+      aboutUsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    // this.router
+  }
+
 }

@@ -15,4 +15,11 @@ export class HomePageComponent implements OnInit {
   pinnedEvent(value: boolean){
     this.pinned = value;
   }
+
+  scrollToBuyNow() {
+    const buyNowElement = document.getElementById('categories');
+    if (buyNowElement) {
+      buyNowElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
